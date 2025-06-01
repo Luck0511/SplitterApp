@@ -68,7 +68,7 @@ formElement.addEventListener('input', (e) => {
 //reset button
 const resetButton = document.getElementById('resetButton');
 
-resetButton.addEventListener('click', (e) => {
+resetButton.addEventListener('click', () => {
     document.getElementById('tipPerson').innerText = '$---.--';
     document.getElementById('total').innerText = '$---.--';
     document.querySelectorAll('.customIn').forEach(element => element.value = null);
