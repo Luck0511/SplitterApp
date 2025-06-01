@@ -1,0 +1,313 @@
+:root {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+
+    --primary: hsl(172, 67%, 45%);
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Grayish-cyan: hsl(184, 14%, 56%);
+    --Light-grayish-cyan: hsl(185, 41%, 84%);
+    --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+    --FontTheme: "Space Mono", monospace;
+    --FontForm-size: 24px;
+    --Fontform-weight: 700;
+}
+
+body {
+    margin: 0;
+    background-color: var(--Light-grayish-cyan);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    "lx     body   rx"
+    "footer footer footer";
+    grid-template-columns:20vw auto 20vw;
+    grid-template-rows: 20vw auto 20vw;
+}
+
+
+header {
+    height: 20vh;
+    grid-area: header;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    width: auto;
+    height: 40%;
+}
+
+.container {
+    background-color: var(--White);
+    grid-area: body;
+    border-radius: 30px;
+    overflow: clip;
+    grid-template-areas:
+    "userInput output";
+    min-height: fit-content;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+}
+
+/*INPUT CONTAINER STYLE*/
+
+.container_input {
+    grid-area: userInput;
+}
+
+.input_form {
+    max-height: 100%;
+    display: grid;
+    grid-template-areas:
+    "bill"
+    "tip"
+    "ppl";
+    grid-template-rows: repeat(3, auto);
+}
+
+fieldset {
+    height: fit-content;
+    border: none;
+    margin: 4px 16px 4px 16px;
+}
+
+fieldset p {
+    margin: 10px 0 10px 0;
+    font-size: 14px;
+    color: var(--Dark-grayish-cyan);
+}
+
+fieldset .inputDiv {
+    background-color: var(--Very-light-grayish-cyan);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    border-radius: 5px;
+}
+
+fieldset .inputDiv:hover {
+    outline: var(--primary) solid 2px;
+}
+
+fieldset span {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin-left: 10px;
+}
+
+fieldset span img {
+    height: 75%;
+    width: auto;
+}
+
+.customIn {
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: transparent;
+    text-align: right;
+    color: var(--Very-dark-cyan);
+    font-family: var(--FontTheme), serif;
+    font-size: var(--FontForm-size);
+    font-weight: var(--Fontform-weight);
+    padding: 0 16px;
+}
+
+/*FORM BUTTON FIELD*/
+#form_tipBtn {
+    background-color: transparent;
+}
+
+#btnDiv {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+#btnDiv .tipButton {
+    background-color: var(--Very-dark-cyan);
+    color: var(--White);
+    font-family: var(--FontTheme), serif;
+    font-size: var(--FontForm-size);
+    font-weight: var(--Fontform-weight);
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#btnDiv .tipButton:hover {
+    background-color: var(--primary);
+    color: var(--Very-dark-cyan);
+}
+
+#btnDiv .tipButton.active {
+    background-color: var(--primary);
+    color: var(--Very-dark-cyan);
+}
+
+#btnDiv .customIn {
+    width: 100px;
+    padding: 0;
+    text-align: center;
+    background-color: var(--Very-light-grayish-cyan);
+    border-radius: 5px;
+}
+
+
+/*OUTPUT CONTAINER STYLE*/
+
+.container_output {
+    background-color: var(--Very-dark-cyan);
+    grid-area: output;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    width: 80%;
+    height: 80%;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.outputDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 48px;
+    width: 100%;
+}
+
+.outputDiv .commonSec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.commonSec .commonSec_title {
+    padding-left: 32px;
+}
+
+.commonSec_title .mainTitle {
+    margin: 0;
+    color: var(--White);
+    font-size: 14px
+}
+
+.commonSec_title .description {
+    margin: 0;
+    color: var(--Grayish-cyan);
+    font-size: 12px;
+}
+
+.commonSec .displayRes {
+    padding-right: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+.commonSec .displayRes h2 {
+    margin: 0;
+    font-size: 40px;
+    color: var(--primary);
+}
+
+.resetDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 15%;
+    padding-bottom: 16px;
+}
+
+.resetDiv .resetBtn {
+    border: none;
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary);
+    color: var(--Very-dark-cyan);
+    font-family: var(--FontTheme), serif;
+    font-size: 100%;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 16px;
+}
+
+.resetBtn:hover {
+    background-color: red;
+    color: var(--White);
+    border: 1px solid black;
+}
+
+/*@media screen and (width >= 1100px) and (height >= 900px) {
+    body {
+        grid-template-columns: 30vw auto 30vw;
+    }
+}*/
+
+@media screen and (height < 750px) {
+    body {
+        grid-template-rows: auto 1fr;
+    }
+    .container_output {
+        height: fit-content;
+    }
+}
+
+@media screen and (width < 1100px) {
+    body {
+        grid-template-columns: 20vw auto 20vw;
+        grid-template-rows: auto 1fr;
+    }
+
+    .container {
+        border-radius: 20px 20px 0 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #btnDiv {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        justify-items: center;
+    }
+}
+
+@media screen and (width < 500px) {
+    body {
+        grid-template-columns: 0 1fr 0;
+        grid-template-rows: auto 1fr;
+        overflow: scroll;
+    }
+
+    .container {
+        border-radius: 20px 20px 0 0;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    #btnDiv {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}

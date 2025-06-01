@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SplitterApp</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet">
+</head>
+
+<header>
+    <img id="logo" src="imgs/logo.svg" alt="logo">
+</header>
+
+<body>
+
+<div class="container">
+    <section class="container_input">
+        <form class="input_form">
+            <fieldset>
+                <p>Bill</p>
+                <div class="inputDiv">
+                    <span>
+                        <img src="imgs/icon-dollar.svg" alt="bill icon">
+                    </span>
+                    <input class="customIn" placeholder="0.00" type="text" name="bill" id="bill">
+                </div>
+            </fieldset>
+            <fieldset id="form_tipBtn">
+                <p>Select tip %</p>
+                <div id="btnDiv">
+                    <button class="tipButton" value="5" type="button">5%</button>
+                    <button class="tipButton" value="10" type="button">10%</button>
+                    <button class="tipButton" value="15" type="button">15%</button>
+                    <button class="tipButton" value="25" type="button">25%</button>
+                    <button class="tipButton" value="50" type="button">50%</button>
+                    <input class="customIn" placeholder="Custom" type="text" name="tipValue" id="tipValue">
+                </div>
+            </fieldset>
+            <fieldset>
+                <p>Number of People</p>
+                <div class="inputDiv">
+                    <span>
+                        <img src="imgs/icon-person.svg" alt="people icon">
+                    </span>
+                    <input class="customIn" placeholder="people" type="text" name="people" id="people">
+                </div>
+            </fieldset>
+        </form>
+    </section>
+    <section class="container_output">
+        <div class="outputDiv">
+            <div class="commonSec">
+                <div class="commonSec_title">
+                    <p class="mainTitle">Tip amount</p>
+                    <p class="description">/ person</p>
+                </div>
+                <div class="displayRes">
+                    <h2 id="tipPerson">$---.--</h2>
+                </div>
+            </div>
+            <div class="commonSec">
+                <div class="commonSec_title">
+                    <p class="mainTitle">Total</p>
+                    <p class="description">/ person</p>
+                </div>
+                <div class="displayRes">
+                    <h2 id="total">$---.--</h2>
+                </div>
+            </div>
+        </div>
+        <div class="resetDiv">
+            <button class="resetBtn" id="resetButton" type="button">RESET</button>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
