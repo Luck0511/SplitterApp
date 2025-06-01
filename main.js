@@ -47,12 +47,8 @@ customInput.addEventListener('input', () => {
     buttons.forEach(b => b.classList.remove('active'));
     selectedTip = parseFloat(customInput.value);
     if (selectedTip > 100 || isNaN(selectedTip)) {
-        if (selectedTip == "") {
-            selectedTip = null;
-        } else {
-            alert("insert a valid tip percentage");
-            selectedTip = null;
-        }
+        alert("insert a valid tip percentage");
+        selectedTip = null;
     } else {
         //call display function, print elements on screen
         display();
