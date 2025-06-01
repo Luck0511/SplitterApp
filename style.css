@@ -78,10 +78,16 @@ fieldset {
     margin: 4px 16px 4px 16px;
 }
 
-fieldset p {
+fieldset p, label {
     margin: 10px 0 10px 0;
+    width: fit-content;
     font-size: 14px;
     color: var(--Dark-grayish-cyan);
+}
+
+#optionalTip{
+    transform: scale(1.5);
+    padding-left: 10px;
 }
 
 fieldset .inputDiv {
@@ -258,6 +264,10 @@ fieldset span img {
     border: 1px solid black;
 }
 
+.hidden{
+    display: none !important;
+}
+
 /*@media screen and (width >= 1100px) and (height >= 900px) {
     body {
         grid-template-columns: 30vw auto 30vw;
@@ -268,6 +278,7 @@ fieldset span img {
     body {
         grid-template-rows: auto 1fr;
     }
+
     .container_output {
         height: fit-content;
     }

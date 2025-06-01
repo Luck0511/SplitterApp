@@ -22,7 +22,7 @@
     <section class="container_input">
         <form class="input_form">
             <fieldset>
-                <p>Bill</p>
+                <label for="bill">Bill</label>
                 <div class="inputDiv">
                     <span>
                         <img src="imgs/icon-dollar.svg" alt="bill icon">
@@ -30,8 +30,14 @@
                     <input class="customIn" placeholder="0.00" type="text" name="bill" id="bill">
                 </div>
             </fieldset>
-            <fieldset id="form_tipBtn">
-                <p>Select tip %</p>
+            <fieldset>
+                <label for="optionalTip">
+                    Are you giving a tip?
+                </label>
+                <input type="checkbox" id="optionalTip" name="optionalTip">
+            </fieldset>
+            <fieldset id="form_tipBtn" class="hidden">
+                <label for="tipValue">Select tip %</label>
                 <div id="btnDiv">
                     <button class="tipButton" value="5" type="button">5%</button>
                     <button class="tipButton" value="10" type="button">10%</button>
@@ -42,7 +48,7 @@
                 </div>
             </fieldset>
             <fieldset>
-                <p>Number of People</p>
+                <label for="people">Number of People</label>
                 <div class="inputDiv">
                     <span>
                         <img src="imgs/icon-person.svg" alt="people icon">
@@ -54,7 +60,7 @@
     </section>
     <section class="container_output">
         <div class="outputDiv">
-            <div class="commonSec">
+            <div id="outTipDiv" class="commonSec hidden">
                 <div class="commonSec_title">
                     <p class="mainTitle">Tip amount</p>
                     <p class="description">/ person</p>
