@@ -27,7 +27,7 @@
                     <span>
                         <img src="imgs/icon-dollar.svg" alt="bill icon">
                     </span>
-                    <input class="customIn" placeholder="0.00" type="text" name="bill" id="bill">
+                    <input class="customIn" placeholder="0.00" type="number" name="bill" id="bill">
                 </div>
             </fieldset>
             <fieldset>
@@ -44,7 +44,15 @@
                     <button class="tipButton" value="15" type="button">15%</button>
                     <button class="tipButton" value="25" type="button">25%</button>
                     <button class="tipButton" value="50" type="button">50%</button>
-                    <input class="customIn" placeholder="Custom" type="text" name="tipValue" id="tipValue">
+                    <div class="customTipDiv">
+                        <input class="customIn" placeholder="Custom" type="number" name="tipValue" id="tipValue">
+                        <div class="alertPopUp" id="tipExceeded">
+                            <p>Tip percentage exceeded 100%!</p>
+                        </div>
+                        <div class="alertPopUp" id="invalidInput">
+                            <p>Insert only numbers!</p>
+                        </div>
+                    </div>
                 </div>
             </fieldset>
             <fieldset>
@@ -53,7 +61,7 @@
                     <span>
                         <img src="imgs/icon-person.svg" alt="people icon">
                     </span>
-                    <input class="customIn" placeholder="people" type="text" name="people" id="people">
+                    <input class="customIn" placeholder="people" type="number" name="people" id="people">
                 </div>
             </fieldset>
         </form>
