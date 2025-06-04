@@ -16,11 +16,22 @@ function display() {
     console.log(formData);
     const tot = formData.get('bill');
     const ppl = formData.get('people');
-    //display data --> using Selected tip as parameter for calculation
-    document.getElementById('tipPerson').innerText = `$${tipPers(tot, selectedTip, ppl).toFixed(2)}`;
-    document.getElementById('total').innerText = `$${totPers(tot, selectedTip, ppl).toFixed(2)}`;
-    console.log(tipPers(tot, selectedTip, ppl));
-    console.log(totPers(tot, selectedTip, ppl));
+    //display data --> using SelecttipPersed tip as parameter for calculation
+    const singleTip = tipPers(tot, selectedTip, ppl).toFixed(2);
+    const singleTot = totPers(tot, selectedTip, ppl).toFixed(2);
+    //validate calculation if NaN or infinity doesn't display
+    if (singleTip === 'NaN' || singleTot === 'NaN') {
+        return false;
+    } else if (singleTip === 'Infinity' || singleTot === 'Infinity') {
+        console.log('!!result is Infinity');
+        return false;
+    } else {
+        document.getElementById('tipPerson').innerText = `$${singleTip}`;
+        document.getElementById('total').innerText = `$${singleTot}`;
+        console.log(tipPers(tot, selectedTip, ppl));
+        console.log(totPers(tot, selectedTip, ppl));
+        return true;
+    }
 }
 
 //button toggle logic + tip input
@@ -40,20 +51,25 @@ buttons.forEach(btn => {
     });
 });
 
-
 //update on input
 customInput.addEventListener('input', () => {
     buttons.forEach(b => b.classList.remove('active'));
     selectedTip = parseFloat(customInput.value);
-    if (selectedTip > 100 || isNaN(selectedTip)) {
-        alert("insert a valid tip percentage");
+    if (selectedTip > 100) {
+        document.getElementById('tipExceeded').classList.add('visible');
+        document.getElementById('invalidInput').classList.remove('visible');
+        selectedTip = null;
+    } else if (isNaN(selectedTip)) {
+        document.getElementById('tipExceeded').classList.remove('visible');
+        document.getElementById('invalidInput').classList.add('visible');
         selectedTip = null;
     } else {
+        document.getElementById('tipExceeded').classList.remove('visible');
+        document.getElementById('invalidInput').classList.remove('visible');
         //call display function, print elements on screen
         display();
     }
 })
-
 
 //acquiring and using form data
 const formElement = document.querySelector('.input_form');
@@ -93,4 +109,4 @@ tipCheckbox.addEventListener('change', () => {
         //refresh output
         display();
     }
-})
+});
