@@ -145,6 +145,7 @@ fieldset span img {
 }
 
 #btnDiv {
+    margin-top: 16px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
@@ -162,6 +163,7 @@ fieldset span img {
     height: 40px;
     cursor: pointer;
     transition: 0.2s;
+    justify-self: center;
 }
 
 #btnDiv .tipButton:hover {
@@ -176,10 +178,12 @@ fieldset span img {
 
 #btnDiv .customIn {
     width: 100px;
+    height: 40px;
     padding: 0;
     text-align: center;
     background-color: var(--Very-light-grayish-cyan);
     border-radius: 5px;
+    font-size: 16px;
 }
 
 .customTipDiv {
@@ -188,6 +192,24 @@ fieldset span img {
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+#manualTip-sec {
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & input {
+        width: 50%;
+        text-align: center;
+        background-color: var(--Very-light-grayish-cyan);
+        border-radius: 5px;
+    }
+    & input:hover {
+        outline: var(--primary) solid 2px;
+    }
 }
 
 /*error message section*/
@@ -314,11 +336,8 @@ fieldset span img {
     display: none !important;
 }
 
-/*@media screen and (width >= 1100px) and (height >= 900px) {
-    body {
-        grid-template-columns: 30vw auto 30vw;
-    }
-}*/
+
+/*adaptive design based on screen size*/
 
 @media screen and (height < 750px) {
     body {

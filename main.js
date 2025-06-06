@@ -1,7 +1,11 @@
 //Tip calculation function
 function tipPers(tot, tip, ppl) {
-    let tipOnTot = tot / 100 * tip;
-    return tipOnTot / ppl;
+    if(!isManual) {
+        let tipOnTot = tot / 100 * tip;
+        return tipOnTot / ppl;
+    }else{
+        return tip;
+    }
 }
 
 //Tot / person calculation
@@ -34,18 +38,19 @@ function display() {
     }
 }
 
-//button toggle logic + tip input
+//buttons logic + tip input
 let selectedTip = null;
 
 const buttons = document.querySelectorAll('.tipButton');
-const customInput = document.getElementById('tipValue');
+const customInput = document.getElementById('percTipValue');
+
 
 buttons.forEach(btn => {
     btn.addEventListener('click', () => {
         buttons.forEach(b => b.classList.remove('active')); // remove active status from all
         btn.classList.add('active'); // add active to clicked one
         selectedTip = parseFloat(btn.value);
-        document.getElementById('tipValue').value = selectedTip;
+        document.getElementById('percTipValue').value = selectedTip;
         //call display function, print elements on screen
         display();
     });
@@ -110,3 +115,24 @@ tipCheckbox.addEventListener('change', () => {
         display();
     }
 });
+
+//switch tip mode
+
+//toggle slider element
+const tipModeSwitch = document.getElementById('tipModeSwitch');
+let isManual = false;
+//alternating windows mode
+const perTipSec = document.getElementById('percTip-sec');
+const manualTipSec = document.getElementById('manualTip-sec');
+
+tipModeSwitch.addEventListener('click', () => {
+    if (tipModeSwitch.checked) {
+        isManual = true;
+        manualTipSec.classList.remove('hidden');
+        perTipSec.classList.add('hidden');
+    } else if (!tipModeSwitch.checked) {
+        isManual = false;
+        manualTipSec.classList.add('hidden');
+        perTipSec.classList.remove('hidden');
+    }
+})
