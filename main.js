@@ -1,10 +1,12 @@
 //Tip calculation function
 function tipPers(tot, tip, ppl) {
     if(!isManual) {
+        //calculate tip, using percentage --> return tip for each pers(splitting the %)
         let tipOnTot = tot / 100 * tip;
         return tipOnTot / ppl;
     }else{
-        return tip;
+        //divide manual tip among all ppl --> returns tip for each pers(splitting tot tip)
+        return tip/ppl;
     }
 }
 
@@ -12,6 +14,7 @@ function tipPers(tot, tip, ppl) {
 
 //Tot / person calculation
 function totPers(tot, tip, ppl) {
+    //calculates tot for each pers (splitting bill + tip for each pers)
     return tot / ppl + tipPers(tot, tip, ppl);
 }
 
