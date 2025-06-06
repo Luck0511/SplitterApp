@@ -8,6 +8,8 @@ function tipPers(tot, tip, ppl) {
     }
 }
 
+/*THIS IS VISIBLE ONLY IN TEST BRANCH*/
+
 //Tot / person calculation
 function totPers(tot, tip, ppl) {
     return tot / ppl + tipPers(tot, tip, ppl);
