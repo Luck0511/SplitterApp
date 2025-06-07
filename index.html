@@ -40,9 +40,7 @@
             <fieldset id="form_tipBtn" class="hidden">
                 <!--slier switch to select mode-->
                 <div class="toggleMenu">
-                    <label for="tipModeSwitch">
-                        <p class="tipPerc">tip percentage %</p>
-                    </label>
+                    <label for="tipModeSwitch" class="tipPerc">tip percentage %</label>
                     <div class="toggle-container">
                         <!-- From Uiverse.io by njesenberger -->
                         <input type="checkbox" class="toggle-input" id="tipModeSwitch" checked>
@@ -87,9 +85,7 @@
                             </filter>
                         </svg>
                     </div>
-                    <label for="tipModeSwitch">
-                        <p class="tipManual">numeric tip insertion</p>
-                    </label>
+                    <label for="tipModeSwitch" class="tipManual">numeric tip insertion</label>
                 </div>
                 <div class="inputTipSec">
                     <div id="percTip-sec" class="hidden">
@@ -119,6 +115,7 @@
                         </div>
                     </div>
                     <div id="manualTip-sec" class="hidden">
+                        <label for="manualTipValue">Insert your tip: </label> <br>
                         <input class="customIn" placeholder="Custom" type="number" name="manualTipValue"
                                id="manualTipValue">
                     </div>
