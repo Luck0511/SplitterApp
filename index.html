@@ -40,7 +40,7 @@
             <fieldset id="form_tipBtn" class="hidden">
                 <!--slier switch to select mode-->
                 <div class="toggleMenu">
-                    <p class="tipPerc">tip percentage %</p>
+                    <label for="tipModeSwitch" class="tipPerc">tip percentage %</label>
                     <div class="toggle-container">
                         <!-- From Uiverse.io by njesenberger -->
                         <input type="checkbox" class="toggle-input" id="tipModeSwitch" checked>
@@ -85,12 +85,15 @@
                             </filter>
                         </svg>
                     </div>
-                    <p class="tipManual">numeric tip insertion</p>
+                    <label for="tipModeSwitch" class="tipManual">numeric tip insertion</label>
                 </div>
                 <div class="inputTipSec">
                     <div id="percTip-sec" class="hidden">
                         <label for="percTipValue">Select tip %</label>
                         <div id="btnDiv">
+                            <!--REMINDER: the values of the buttons get passed anyway,
+                            NOTE: they don't get printed in console cause it only prints the INPUT value,
+                            the buttons pass the value to the function anyway-->
                             <button class="tipButton" value="5" type="button">5%</button>
                             <button class="tipButton" value="10" type="button">10%</button>
                             <button class="tipButton" value="15" type="button">15%</button>
@@ -98,9 +101,9 @@
                             <button class="tipButton" value="50" type="button">50%</button>
                             <div class="customTipDiv">
                                 <input class="customIn"
-                                       placeholder="Custom"
+                                       placeholder="Custom %"
                                        type="number"
-                                       name="tipValue"
+                                       name="percTipValue"
                                        id="percTipValue">
                                 <div class="alertPopUp" id="tipExceeded">
                                     <p>Tip percentage exceeded 100%!</p>
@@ -111,8 +114,9 @@
                             </div>
                         </div>
                     </div>
-                    <div id="manualTip-sec" class="">
-                        <input class="customIn" placeholder="Custom" type="number" name="tipValue"
+                    <div id="manualTip-sec" class="hidden">
+                        <label for="manualTipValue">Insert your tip: </label> <br>
+                        <input class="customIn" placeholder="Custom" type="number" name="manualTipValue"
                                id="manualTipValue">
                     </div>
                 </div>
