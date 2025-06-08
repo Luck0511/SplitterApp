@@ -35,7 +35,7 @@ buttons.forEach(btn => {
 
 //update on input
 customInput.forEach((userIn) => {
-    userIn.addEventListener('input', (e) => {
+    userIn.addEventListener('input', () => {
         //turn of all buttons
         buttons.forEach(b => b.classList.remove('active'));
         if (tipCheckbox.checked) {
