@@ -71,7 +71,7 @@ header {
     grid-area: userInput;
 }
 
-.input_form {
+#input_form {
     max-height: 100%;
     display: grid;
     grid-template-areas:

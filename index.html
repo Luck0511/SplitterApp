@@ -22,7 +22,7 @@
 
 <div class="container">
     <section class="container_input">
-        <form class="input_form">
+        <form id="input_form">
             <fieldset>
                 <label for="bill">Bill</label>
                 <div class="inputDiv">
@@ -36,7 +36,7 @@
                 <label for="optionalTip">
                     Are you giving a tip?
                 </label>
-                <input type="checkbox" id="optionalTip" name="optionalTip">
+                <input type="checkbox" id="optionalTip" name="optionalTip" required>
             </fieldset>
             <fieldset id="form_tipBtn" class="hidden">
                 <!--slier switch to select mode-->
@@ -128,7 +128,7 @@
                     <span>
                         <img src="imgs/icon-person.svg" alt="people icon">
                     </span>
-                    <input class="customIn" placeholder="people" type="number" name="people" id="people">
+                    <input class="customIn" placeholder="people" type="number" name="people" id="people" required>
                 </div>
             </fieldset>
         </form>

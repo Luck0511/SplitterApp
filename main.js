@@ -1,3 +1,6 @@
+document.getElementById('tipExceeded').classList.remove('visible');
+document.getElementById('invalidInput').classList.remove('visible');
+
 //Tip calculation function
 function tipPers(tot, tip, ppl) {
     if (!isManual) {
@@ -35,7 +38,7 @@ buttons.forEach(btn => {
 
 //update on input
 customInput.forEach((userIn) => {
-    addEventListener('input', () => {
+    userIn.addEventListener('input', () => {
         //turn of all buttons
         buttons.forEach(b => b.classList.remove('active'));
         if (tipCheckbox.checked) {
@@ -75,13 +78,15 @@ customInput.forEach((userIn) => {
     })
 });
 
-
 //acquiring and using form data
-const formElement = document.querySelector('.input_form');
+const formElement = document.getElementById('input_form');
 
 formElement.addEventListener('input', (e) => {
     //prevent reload on submit
     e.preventDefault();
+
+    //DEBUGGING:
+    console.log(e.target);
     //call display function, print elements on screen
     display();
 });
