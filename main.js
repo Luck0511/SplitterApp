@@ -1,3 +1,6 @@
+document.getElementById('tipExceeded').classList.remove('visible');
+document.getElementById('invalidInput').classList.remove('visible');
+
 //Tip calculation function
 function tipPers(tot, tip, ppl) {
     if (!isManual) {
